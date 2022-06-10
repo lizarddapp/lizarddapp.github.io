@@ -276,7 +276,6 @@ let pos = initialPos;
 const stepWidth = 25;
 function moveRight(e) {
   const step = e.target.id;
-  console.log(step);
   let nextPos = initialPos + stepWidth * (step - 1);
 
   $("#piece").animate(
@@ -350,10 +349,6 @@ var swiper = new Swiper(".mySwiper", {
         $(".bubble-box-mobile").removeClass("bubble-box-mobile-hide");
         $(".bubble-box-mobile").html(roadmapContent[index_currentSlide]);
       }, 500);
-
-      // $(".bubble-box-mobile")
-
-      console.log(index_currentSlide);
     },
   },
 });
