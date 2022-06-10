@@ -107,6 +107,10 @@ h6,
   margin-top: 72px;
 }
 
+.logo-img {
+  width:100%;
+  max-width: 600px;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -253,7 +257,7 @@ h6,
   bottom: 15px;
   left: 15px;
   padding: 10px 0;
-  background-color: #fff;
+  background-color: #111;
   overflow-y: auto;
   transition: 0.3s;
 }
@@ -261,7 +265,7 @@ h6,
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #7a6960;
+  color: #eae7e5;
 }
 .navbar-mobile a:hover,
 .navbar-mobile .active,

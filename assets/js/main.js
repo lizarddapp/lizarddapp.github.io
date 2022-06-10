@@ -316,30 +316,34 @@ var swiper = new Swiper(".mySwiper", {
       // });
       const roadmapContent = [
         `<h4 class="title">Phase 1</h4>
-              Monoguilds is a strategy blockchain game where you can develop your civilization together
-              with
-              other people. The player can loot, trade items, join guild and develop buildings. With
-              the
-              potential of Blockchain, Web3, Defi and NFT to make the game more fun and
-              realistic.`,
-        `<h4 class="title">Phase 2</h4>
-              Monoguilds is a strategy blockchain game where you can develop your civilization together
-              with
-             
-              the
-              potential of Blockchain, Web3, Defi and NFT to make the game more fun and
-              realistic.`,
+                <ol>
+                  <li>Whitepaper published</li>
+                  <li>Building community</li>
+                  <li>Gameplay proposal</li>
+                  <li>Testnet prototype (Profile, Guilds & Pieces NFTs)</li>
+                  <li>Branding</li>
+                </ol>`,
+        ` <h4 class="title">Phase 2</h4>
+                <ol>
+                  <li>NFT Arts & Game graphics</li>
+                  <li>Mainnet launch (Presale Pieces & Guilds)</li>
+                  <li>Minting NFT (Piece)</li>
+                  <li>NFT marketplace listing</li>
+                  <li>Complete gameplay proposal with details</li>
+                </ol>`,
         `<h4 class="title">Phase 3</h4>
-              Monoguilds is a strategy blockchain game where you can develop your civilization together
-              with
-             
-              realistic.`,
+                <ol>
+                  <li>Provide SAPPHIRE initial liquidity for Piece holder</li>
+                  <li>Partnership with multiple DEXes (Liquidity Mining)</li>
+                  <li>In-game NFT Marketplace.</li>
+                  <li>SAPPHIRE token launch.</li>
+                </ol>`,
         `<h4 class="title">Phase 4</h4>
-           
-              other people. The player can loot, trade items, join guild and develop buildings. With
-              the
-              potential of Blockchain, Web3, Defi and NFT to make the game more fun and
-              realistic.`,
+                <ol>
+                  <li>Capturing</li>
+                  <li>Pieces & Guilds Battle (Testnet & Mainnet)</li>
+                  <li>More partnership</li>
+                </ol>`,
       ];
       $(".bubble-box-mobile").addClass("bubble-box-mobile-hide");
       setTimeout(function () {
