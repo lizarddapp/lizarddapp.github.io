@@ -258,3 +258,98 @@
     });
   });
 })();
+
+var lands = $(".land");
+var timer;
+$(document)
+  .on("mouseenter", ".land", function (e) {
+    timer = setTimeout(() => {
+      moveRight(e);
+    }, 250);
+  })
+  .on("mouseout", function () {
+    clearTimeout(timer);
+  });
+const initialPos = 11;
+let pos = initialPos;
+
+const stepWidth = 25;
+function moveRight(e) {
+  const step = e.target.id;
+  console.log(step);
+  let nextPos = initialPos + stepWidth * (step - 1);
+
+  $("#piece").animate(
+    { left: `${nextPos}%` },
+    {
+      duration: 800,
+      specialEasing: {
+        width: "linear",
+        height: "easeOutBounce",
+      },
+    }
+  );
+  const bbx = $(`#${step}.bubble-box`);
+
+  const landIds = [1, 2, 3, 4];
+  const hideIds = landIds.filter((el) => el != step);
+
+  $(`#${step}.bubble-box`).animate({ opacity: 1 }, 300, "easeOutBounce");
+  hideIds.map((el) =>
+    $(`#${el}.bubble-box`).animate({ opacity: 0 }, 300, "easeOutBounce")
+  );
+}
+function stopAnimate() {
+  $(`.bubble-box`).stop();
+}
+
+var swiper = new Swiper(".mySwiper", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  on: {
+    slideChange: function () {
+      const index_currentSlide = swiper.realIndex;
+      // $(".bubble-box-mobile").fadeOut(function () {
+      //   $(".bubble-box-mobile").fadeIn();
+      // });
+      const roadmapContent = [
+        `<h4 class="title">Phase 1</h4>
+              Monoguilds is a strategy blockchain game where you can develop your civilization together
+              with
+              other people. The player can loot, trade items, join guild and develop buildings. With
+              the
+              potential of Blockchain, Web3, Defi and NFT to make the game more fun and
+              realistic.`,
+        `<h4 class="title">Phase 2</h4>
+              Monoguilds is a strategy blockchain game where you can develop your civilization together
+              with
+             
+              the
+              potential of Blockchain, Web3, Defi and NFT to make the game more fun and
+              realistic.`,
+        `<h4 class="title">Phase 3</h4>
+              Monoguilds is a strategy blockchain game where you can develop your civilization together
+              with
+             
+              realistic.`,
+        `<h4 class="title">Phase 4</h4>
+           
+              other people. The player can loot, trade items, join guild and develop buildings. With
+              the
+              potential of Blockchain, Web3, Defi and NFT to make the game more fun and
+              realistic.`,
+      ];
+      $(".bubble-box-mobile").addClass("bubble-box-mobile-hide");
+      setTimeout(function () {
+        $(".bubble-box-mobile").removeClass("bubble-box-mobile-hide");
+        $(".bubble-box-mobile").html(roadmapContent[index_currentSlide]);
+      }, 500);
+
+      // $(".bubble-box-mobile")
+
+      console.log(index_currentSlide);
+    },
+  },
+});
